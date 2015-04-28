@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toothris</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <style type="text/css">
+      .tt-img-left {
+        padding-right: 15pt;
+        padding-bottom: 15pt}
+      .tt-img-right {
+        padding-left: 15pt;
+        padding-bottom: 15pt}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row"><div class="col-xs-12"><h1 class="text-center">
+        TOOTHRIS:
+        <small>smooth open-source tetris clone with a few surprises</small>
+        </h1></div></div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Video</h2>
+          <video controls width="100%">
+            <source src="toothris800x600.mp4" type="video/mp4">
+            <source src="toothris800x600.ogg" type="video/ogg">
+            <source src="toothris800x600.webm" type="video/webm">
+            Here should've been the video, but your browser doesn't seem to
+            support it...
+          </video>
+          <br><br>
+          <p><a href="https://github.com/toothris/toothris"
+                class="btn btn-default btn-lg">Build from Source</a>
+             <a href="toothris800x600.mp4"
+                class="btn btn-default btn-lg">Download Video</a></p>
+          <div class="alert alert-success">
+            <strong>For best viewing experience</strong> make sure your system
+            can consistently play 60 fps video without twitches.</div>
+          <p class="text-justify">
+            The video itself was rendered at constant 60 fps rate and features
+            perfectly smooth animation, so if you're seeing any twitches,
+            the problem is likely in your system.
+            Last time I checked, iPhone 4, MacBook Pro and Raspberry Pi B+
+            played the video pretty well.
+            Though I couldn't get satisfactory results on Sony Ion,
+            Lenovo Thinkpad and Playstation 3...</p></div>
+        <div class="col-md-6">
+          <h2>Testimonials</h2>
+          <blockquote class="blockquote-reverse">
+            <p>Looks awesome! Though I have no clue what's going on here...</p>
+            <footer>Yulia, my wife</footer></blockquote>
+          <blockquote class="blockquote-reverse">
+            <p>Can we port it to Flash?</p>
+            <footer>Eugene, ex-colleague</footer></blockquote>
+          <blockquote class="blockquote-reverse">
+            <p>What you guys are smoking?..</p>
+            <footer>Alexey, ex-colleague</footer></blockquote>
+          <blockquote class="blockquote-reverse">
+            <p>What the heck is wrong with controls!?
+               Reproduce the CLASSICS first, THEN get creative!</p>
+            <footer>Andrew, ex-colleague</footer></blockquote>
+          <h2>Credits</h2>
+          <p class="text-justify">
+            Kick-ass chip tune in the video:
+            "Artificial Sweetener" by
+            Christian "Funky Fish" Finstad and Lasse "raina" Mattila
+            licensed under
+            <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"
+            ><img src="cc-by-nc-sa.png"></a></p>
+          <p class="text-justify">
+            All the great services, software and hardware I used to build
+            the game: too many good people to list here, see all the
+            dependencies in
+            <a href="https://github.com/toothris">sources</a>.</p>
+          <p class="text-justify">
+            Inspiration, support and occasionally kicking me away from the
+            laptop to do something useful: my dearest wife Yulia.</p>
+          <p class="text-justify">
+            The rest of game stuff:
+            yours truly, Oleg "olegus8" Plakhotniuk.</p></div></div>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Background</h2>
+          <div class="pull-left tt-img-left">
+            <img src="oleg-sm.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            I made this thingy back in 2008 over a course of 3 months.
+            I wanted to create a game with very smooth animations and
+            transitions all over the place.
+            Before long I realized that on some platforms it's problematic
+            even in principle to achieve consistent graphics performance.
+            Moreover, the tools I chose made it difficult to port the game
+            to more suitable platforms.
+            In the end I decided to get the game to some stable point and
+            stop there.</p>
+          <p class="text-justify">
+            I'm sharing all this in hope it might inspire some bright mind to
+            create something beautiful.
+            Or perhaps someone may even wish to finish this project and
+            make a real game out of it.
+          <p>If you want to get in touch, please feel free to drop me a line at
+           <a href="mailto:contact@toothris.org">contact@toothris.org</a>.</p>
+          <p class="text-right">
+            Thanks for reading all this, you're great! Oleg.</p>
+        </div>
+        <div class="col-md-6">
+          <h2>Features</h2>
+          <p class="text-justify">
+            Freeplay mode only: single infinite level with all gameplay
+            elements. There's no end of the game or gradual levels
+            progression.</p>
+          <p class="text-justify">
+            It runs on Arch Linux, but with a reasonable amount of
+            <a href="https://github.com/toothris/toothris">effort</a>
+            can be built on Windows or Mac OS X.</p>
+          <p class="text-justify">
+            It's written in Stackless Python. All game objects are
+            separate microthreads communicating with each other.</p>
+          <p class="text-justify">
+            Game logic is deterministic. If you start with the same random
+            seed and playback the same player inputs, you'll get the same
+            results.</p>
+          <p class="text-justify">
+            It can record and playback demos. Comes in handy when debugging
+            stuff or shooting gameplay videos.</p>
+          <p class="text-justify">
+            <a href="toothris800x600.mp4">Game video</a> at the top of this
+            page was automatically
+            <a href="https://github.com/toothris/www">generated</a>
+            from the demo played back and rendered frame by
+            frame.</p></div></div>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Gameplay</h2>
+          <p class="text-justify">
+            The gameplay consists of two main parts: classical and extended.
+            Classical part comes from the original Tetris game: there are 7
+            different figures; each round a random figure is falling into the
+            cup; whenever a row is completely filled up with figures, it's
+            being removed from the cup.</p>
+          <p class="text-justify">
+            Extended gameplay part is unique to this game.
+            It's based on two concepts: actions and bonuses.
+            <strong>Action</strong> is something the player does
+            (for example, rotate the figure full circle, or slam it against
+            the cup).
+            <strong>Bonus</strong> is something the player gets
+            (for example, the ability to slam the figure all the way to the
+            very bottom destroying every other figure in its way).</p>
+          <p class="text-justify">
+            After a player has performed a given action with all 7 figures,
+            he/she gets the corresponding bonus.
+            There's a table in the right part of the game screen showing
+            which actions with which figures were made.
+            When the row in this table is complete, player gets the bonus
+            to the left of this row.</p>
+          <p>The game is controlled with <strong>arrow keys</strong>.
+             The menu is navigated with <strong>mouse</strong>. There are
+             7 actions and 7 bonuses. They are described below.</p></div>
+        <div class="col-md-6">
+          <h2>Screenshot</h2>
+          <img src="sshot.jpg" class="img-rounded img-responsive"></div></div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-center">Actions &amp; Bonuses</h2></div></div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="pull-left tt-img-left">
+            <img src="action-drop.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Drop:</strong> hold "down" key and slam the figure
+            down hard.
+            After dropping all 7 different figures you'll get Super Drop
+            bonus.</p></div>
+        <div class="col-md-6">
+          <div class="pull-right tt-img-right">
+            <img src="bonus-super_drop.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Super Drop:</strong> when you slam the figure down,
+            it'll go all the way to the very bottom of the cup, destroying
+            every figure in its way.</p></div></div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="pull-left tt-img-left">
+            <img src="action-hit.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Hit:</strong> slam the figure hard against a side of
+            the cup.
+            After hitting all types of figures you'll get Super Hit
+            bonus.</p></div>
+        <div class="col-md-6">
+          <div class="pull-right tt-img-right">
+            <img src="bonus-super_hit.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Super Hit:</strong> when you slam the figure against
+            a side, whole bottom row of cells will be removed from the
+            cup.</p></div></div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="pull-left tt-img-left">
+            <img src="action-ground.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Ground:</strong> place the figure so that there are
+            no empty cells immediately below it. The figure must rest
+            completely on other figures or at the bottom of the cup. No part
+            of the figure should overhang or bridge.
+            When you did this with figures of every type, you'll get
+            Builder bonus.</p></div>
+        <div class="col-md-6">
+          <div class="pull-right tt-img-right">
+            <img src="bonus-builder.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Builder:</strong> after you placed the figure to rest,
+            every empty space below it will be filled up.</p></div></div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="pull-left tt-img-left">
+            <img src="action-rotate.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Rotate:</strong> hold "up" key and rotate the figure
+              full circle. After rotating all the figures you'll get
+              King of the Hill bonus.</p></div>
+        <div class="col-md-6">
+          <div class="pull-right tt-img-right">
+            <img src="bonus-king_of_hill.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>King of the Hill:</strong> after you placed the figure
+            to rest, all the rows it lays in will be removed.</p></div></div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="pull-left tt-img-left">
+            <img src="action-frag.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Fragment:</strong> the figure gets fragmented when only
+            a part of it is being removed from the cup. Fragmented figure
+            looks like separate square cells. After each figure type was
+            fragmented, you'll get Acid Rain bonus.</p></div>
+        <div class="col-md-6">
+          <div class="pull-right tt-img-right">
+            <img src="bonus-acid_rain.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Acid Rain:</strong> in the beginning of next round
+            acid droplets will fall down into the cup, dissolving topmost
+            cell in each column.</p></div></div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="pull-left tt-img-left">
+            <img src="action-swallow.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Swallow:</strong> remove the figure from the cup all at
+            once, without fragmenting it.
+            After each figure type was swallowed, you'll get Hail
+            bonus.</p></div>
+        <div class="col-md-6">
+          <div class="pull-right tt-img-right">
+            <img src="bonus-hail.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Hail:</strong> in the beginning of next round new cells
+            will fall down into the cup until all columns are of the same
+            height.</p></div></div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="pull-left tt-img-left">
+            <img src="action-float.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Float:</strong> place the figure so that it
+            overhangs or bridges over other figures. It's the opposite of
+            Ground action. After you floated each figure type, you'll get
+            Earthquake bonus.</p></div>
+        <div class="col-md-6">
+          <div class="pull-right tt-img-right">
+            <img src="bonus-earthquake.jpg" class="img-rounded"></div>
+          <p class="text-justify">
+            <strong>Earthquake:</strong> in the beginning of next round
+            the cup gets shaken up, removing all gaps in each column.
+            That is, each column will have the same number of cells in it,
+            but they'll go continuously without any gaps.</p></div></div>
+      <hr>
+      <p class="text-muted text-right">
+        Copyright 2008, 2015 Oleg Plakhotniuk</p>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
