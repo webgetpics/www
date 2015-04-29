@@ -18,5 +18,5 @@ cp -r /webgetpics-www/bootstrap.git/dist/* $TMPDIR
 cp -r /webgetpics-www/jquery/node_modules/jquery/dist/cdn/* $TMPDIR
 
 # pics
-convert $TMPDIR/rpi.jpg -strip -resize 512x384 $TMPDIR/rpi-sm.jpg
-convert $TMPDIR/screen.jpg -strip -resize 512x384 $TMPDIR/screen-sm.jpg
+convert $TMPDIR/rpi.jpg -strip -resize 800x600 $TMPDIR/rpi-sm.jpg
+convert $TMPDIR/screen.jpg -strip -resize 800x600 $TMPDIR/screen-sm.jpg
