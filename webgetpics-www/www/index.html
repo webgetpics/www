@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>webgetpics</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row"><div class="col-xs-12"><h1 class="text-center">
+        webgetpics:
+        <small>command line tool to set pictures from web search as
+               X desktop background</small>
+        </h1></div></div>
+      <br><br>
+      <div class="row">
+        <div class="col-md-6">
+          <p><a href="https://aur.archlinux.org/packages/webgetpics"
+                class="btn btn-primary btn-lg"
+             >Install on Arch Linux</a>
+             <a href="https://github.com/webgetpics/webgetpics"
+                class="btn btn-primary btn-lg"
+             >Source &amp; Docs</a></p>
+          <br><br>
+          <h2>Motivation</h2>
+          <p class="text-justify">
+            I thought it'd be cool to project random images from web search
+            on the wall in my apartment.
+            Sort of a live poster, which changes the picture every once
+            in a while.
+            Hardware parts wasn't a problem - 320x240 projector for $50 and
+            Raspberry Pi for $35 did great job for a price.
+            Though I couldn't find an open-source tool to fetch random pictures
+            from the web, so I wrote one.
+            Hope you'll have as much fun with it as I do!</p>
+          <p class="text-right">Oleg</p>
+          <h2>Features</h2>
+          <p class="text-justify">It runs continuously as a daemon, gets URLs
+            from web image search, downloads images, resizes, and sets random
+            image from current search query as X desktop background every now
+            and then.</p>
+          <p class="text-justify">Can be controlled through file system via
+            <span class="label label-default">echo</span> and
+            <span class="label label-default">touch</span>.
+            I use SSH client on my smartphone as remote control.</p>
+          <p class="text-justify">Available
+            <a href="https://github.com/webgetpics/webgetpics#Commands"
+            >commands</a> include: change search query, skip image, blacklist
+            controls.</p>
+          <p class="text-justify">Global and per-query blacklists.
+             You can block image from appearing in current query
+             or all queries.</p>
+          <p class="text-justify">Offline cache. All images are stored on
+            disk. If network goes offline, slide show continues with what
+            was already downloaded.</p>
+          <p class="text-justify">Adjustable download speed limit.</p>
+          <p class="text-justify">Duplicate images are skipped in slide show.
+            Duplicate detection is based on pixel data, so identical images
+            get detected even if they were downloaded from different websites,
+            have different names and different metadata.</p>
+          <p class="text-justify">Built with 30% more love than closest
+            competitor!</p><br><br></div>
+        <div class="col-md-6">
+          <img src="screen-sm.jpg" class="img-rounded img-responsive">
+          <br><br>
+          <img src="rpi-sm.jpg" class="img-rounded img-responsive"></div></div>
+      <hr>
+      <p class="text-muted text-right">
+        Copyright 2015 Oleg Plakhotniuk</p>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
