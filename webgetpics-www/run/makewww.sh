@@ -26,8 +26,8 @@ convert $TMPDIR/rpi.jpg -strip \
 convert $TMPDIR/screen.jpg -strip \
   -crop 4000x3000+500+650 \
   -brightness-contrast 20% \
-  '(' $TMPDIR/pop_art_by_purpledragongirl.jpg \
-      -resize 3085x1800 \
+  '(' '(' $TMPDIR/pop_art_by_purpledragongirl.jpg -resize 320x240 \
+      ')' -resize 3085x1800 \
   ')' -geometry +600+600 -compose blend \
   -define compose:args=50,50 -composite \
   -resize 800x600 $TMPDIR/screen-sm.jpg
