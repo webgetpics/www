@@ -33,7 +33,7 @@ chmod +w /etc/sudoers
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 chown -R user:user /webgetpics-www
 
-pacman -S --noconfirm --needed git imagemagick nodejs openssh
+pacman -S --noconfirm --needed git imagemagick npm openssh
 
 sudo -u user bash -l /webgetpics-www/setup/as-user.sh
 
